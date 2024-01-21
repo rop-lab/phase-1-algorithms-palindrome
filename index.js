@@ -1,25 +1,15 @@
-function isPalindrome(word) {
-  // Write your algorithm here
-}
+// isPalindrome.js
 
-/* 
-  Add your pseudocode here
-*/
+// Function to check if a string is a palindrome
+function isPalindrome(str) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
-/*
-  Add written explanation of your solution here
-*/
+  // Reverse the string
+  const reversedStr = cleanStr.split('').reverse().join('');
 
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
-
-  console.log("");
-
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
+  // Check if the original and reversed strings are the same
+  return cleanStr === reversedStr;
 }
 
 module.exports = isPalindrome;
